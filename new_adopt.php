@@ -9,15 +9,14 @@
         $rcv_no = $data['rcv_no'];
         $rcv_no++; */
         $name=mysqli_real_escape_string($connn,$_POST['fname']);
-        $branch=mysqli_real_escape_string($connn,$_POST['branch']);
         $gender=mysqli_real_escape_string($connn,$_POST['gender']);
         $mobile=mysqli_real_escape_string($connn,$_POST['mobile']);
-        $uname=mysqli_real_escape_string($connn,$_POST['uname']);
         $yaer=mysqli_real_escape_string($connn,$_POST['yaer']);
         $mail=mysqli_real_escape_string($connn,$_POST['mail']);
+        $college=mysqli_real_escape_string($connn,$_POST['college']);
 
         
-        $qry = "INSERT INTO rcv (name, branch, gender,mobile,uname,yaer,mail) VALUES ('$name','$branch','$gender','$mobile','$uname','$yaer','$mail') ";
+        $qry = "INSERT INTO rcv (name, gender,mobile,yaer,mail,college) VALUES ('$name','$gender','$mobile','$yaer','$mail','$college') ";
         $result = mysqli_query($connn,$qry);
 
    /* if($result)
@@ -44,9 +43,12 @@
     
     <link rel="stylesheet" href="style2.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script src="pdf.js"></script>
 </head>
 <body>
-<div class="card">
+<div class="card"  id="invoice">
   <div class="card-header">
     <h2>Welcome To TAARANGANA</h2>
     <div class="card-info"><span class="date">13 Mar, 2021</span><span class="dot"></span></div>
@@ -55,8 +57,11 @@
     <p>Hi!!!!</p><?php echo $_POST['fname'];?>
    
   </div>
-  <input type="button" onclick="window.print()" value="print now" style="margin-top: 8px;" />
-  <a href="index.php" style="margin-left: 50px;">Go Back</a>
+  
 </div>
+    <button class="custom-btn btn-2" id="download">Download</button>
+            
+  <a href="index.php" style="margin-left: 50px;">Go Back</a>
 </body>
 </html>
+<!---onclick="window.print()" -->

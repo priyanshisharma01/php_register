@@ -39,6 +39,7 @@
 
 
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     
 </head>
 <body>
@@ -56,24 +57,16 @@
         <label for="male">Male</label>
         <input type="radio" id="female" value="female" name="gender" size="10">
         <label for="female">Female</label><br><br>
-        <label for="branch">Select Branch</label><br>
-        <select id="branch" name="branch">
-            <option value="default">SELECT</option>
-            <option value="CSAI">CSAI</option>
-            <option value="cse">CSE</option>
-            <option value="ece">ECE</option>
-            <option value="it">IT</option>
-            <option value="mae">MAE</option>
-            
-        </select>
+        
+        
         <label for="mobile">Mobile No.</label>
         <input type="text" id="mobile" name="mobile" placeholder="Enter Phone Number">
-        <label for="uname">Username</label>
-        <input type="text" id="uname" name="uname" placeholder="Enter Unique username">
         <label for="yaer">Year</label>
         <input type="text" id="year" name="yaer" placeholder="Enter Your Year">
         <label for="mail">Email id</label>
         <input type="text" id="mail" name="mail" placeholder="xyz@abc.com">
+            <label for="college">College</label>
+        <input type="text" id="college" name="college" placeholder="Enter College Name">
         <input type="submit" name="adopt" value="Generate Pass">
         
 
